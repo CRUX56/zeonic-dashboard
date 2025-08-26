@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-nav-bar',
-  imports: [],
+  imports: [MatSidenavModule],
   templateUrl: './nav-bar.html',
-  styleUrl: './nav-bar.scss'
+  styleUrl: './nav-bar.scss',
 })
-export class NavBar {
-
-}
+export class NavBar {}
