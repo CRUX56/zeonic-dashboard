@@ -1,0 +1,21 @@
+.main-dashboard {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  .dashboard-container {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    flex-wrap: nowrap;
+
+    .sidebar {
+      width: 20%;
+      outline: 1px solid #fa3131;
+    }
+    .header-bar {
+      width: 80%;
+      outline: 1px solid #31fa3f;
+    }
+  }
+}
