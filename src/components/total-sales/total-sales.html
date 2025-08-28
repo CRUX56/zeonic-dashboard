@@ -1,1 +1,22 @@
-<p>total-sales works!</p>
+<div class="total-sales-card">
+  <mat-card appearance="outlined">
+    <mat-card-title>Total Sales</mat-card-title>
+    <mat-card-content>
+      <span class="totalSales">{{ totalSalesValue | number : '1.0-0' }}</span>
+      <div class="currency-icon">
+        @if (totalSalesCurrency === 'USD') {
+        <mat-icon fontIcon="currency_usd"></mat-icon>
+        } @else if (totalSalesCurrency === 'EUR') {
+        <mat-icon fontIcon="currency_eur"></mat-icon>
+        } @else if (totalSalesCurrency === 'GBP') {
+        <mat-icon fontIcon="currency_gbp"></mat-icon>
+        } @else if (totalSalesCurrency === 'JPY') {
+        <mat-icon fontIcon="currency_jpy"></mat-icon>
+        } @else {
+        <mat-icon fontIcon="currency_exchange"></mat-icon>
+        }
+      </div>
+      <span class="currency">{{ totalSalesCurrency }}</span>
+    </mat-card-content>
+  </mat-card>
+</div>

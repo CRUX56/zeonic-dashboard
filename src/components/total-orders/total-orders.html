@@ -2,9 +2,18 @@
   <mat-card appearance="outlined">
     <mat-card-title>Total Orders</mat-card-title>
     <mat-card-content>
-      <span>{{ totalOrderValue }}</span>
-      <span>{{ totalOrderPercentageNew }}</span>
-      <span>{{ totalOrderTrend }}</span>
+      <span class="totalOrder">{{ totalOrderValue | number : '1.0-0' }}</span>
+      <span class="totalOrderPercentage">{{ totalOrderPercentageNew | percent : '1.1-1' }}</span>
+      <div class="trend-icon">
+        @if(totalOrderTrend === 'up') {
+        <mat-icon>arrow_upward</mat-icon>
+        } @else if (totalOrderTrend === 'down') {
+        <mat-icon>arrow_downward</mat-icon>
+        } @else {
+        <mat-icon>equalizer</mat-icon>
+        }
+        <span>{{ totalOrderTrend }}</span>
+      </div>
     </mat-card-content>
   </mat-card>
 </div>

@@ -1,5 +1,7 @@
 export interface totalOrderResponse {
-  value: number;
-  percentageNew: number;
-  trend: string;
+  'total-orders': {
+    value: number;
+    percentageNew: number;
+    trend: string;
+  };
 }

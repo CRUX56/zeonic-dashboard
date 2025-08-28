@@ -1,12 +1,14 @@
 import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { DecimalPipe, PercentPipe } from '@angular/common';
 import { DashboardComponent } from '../../global/services/component';
 import { totalOrderResponse } from './response-model';
 
 @Component({
   selector: 'app-total-orders',
-  imports: [MatCardModule],
+  imports: [MatCardModule, MatIconModule, DecimalPipe, PercentPipe],
   templateUrl: './total-orders.html',
   styleUrl: './total-orders.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -21,16 +23,16 @@ export class TotalOrders implements OnInit {
 
   ngOnInit(): void {
     this.getValue();
-    console.log(this.totalOrderValue);
   }
 
   getValue(): void {
     this.widgetComponent.getDashboardData().subscribe({
       next: (response: totalOrderResponse) => {
         if (response) {
-          this.totalOrderValue = response.value;
-          this.totalOrderPercentageNew = response.percentageNew;
-          this.totalOrderTrend = response.trend;
+          const totalOrders = response['total-orders'];
+          this.totalOrderValue = totalOrders.value;
+          this.totalOrderPercentageNew = totalOrders.percentageNew;
+          this.totalOrderTrend = totalOrders.trend;
         } else {
           this.totalOrderValue = 0;
           this.totalOrderPercentageNew = 0;

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { DashboardDataModel } from '../../components/constants/models';
 import DashboardData from '../../components/dashboard-data.json';
 
@@ -9,6 +9,6 @@ import DashboardData from '../../components/dashboard-data.json';
 export class DashboardComponent {
   constructor() {}
   getDashboardData(): Observable<DashboardDataModel> | any {
-    return DashboardData;
+    return of(DashboardData);
   }
 }
