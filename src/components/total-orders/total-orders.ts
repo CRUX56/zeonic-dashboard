@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, OnDestroy, inject } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
@@ -13,20 +14,25 @@ import { totalOrderResponse } from './response-model';
   styleUrl: './total-orders.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TotalOrders implements OnInit {
+export class TotalOrders implements OnInit, OnDestroy {
   totalOrderValue: number = 0;
   totalOrderPercentageNew: number = 0;
   totalOrderTrend: string = '';
 
   private widgetComponent: DashboardComponent = inject(DashboardComponent);
   private _snackBar: MatSnackBar = inject(MatSnackBar);
+  private subscription: Subscription = new Subscription();
 
   ngOnInit(): void {
     this.getValue();
   }
 
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
   getValue(): void {
-    this.widgetComponent.getDashboardData().subscribe({
+    this.subscription = this.widgetComponent.getDashboardData().subscribe({
       next: (response: totalOrderResponse) => {
         if (response) {
           const totalOrders = response['total-orders'];

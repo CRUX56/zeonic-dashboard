@@ -1,1 +1,13 @@
-<p>total-customers works!</p>
+<div class="total-customers">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Total Customers</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Total: {{ totalCustomers }}</p>
+      <p>New: {{ newCustomers }}</p>
+      <p>Returning: {{ returningCustomers }}</p>
+      <p>Percentage New: {{ percentageNew | percent }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

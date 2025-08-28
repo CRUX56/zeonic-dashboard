@@ -10,9 +10,9 @@
   },
   "total-customers": {
     "value": 465,
-    "new-customers": 123,
-    "returning-customers": 342,
-    "percentage-new": 26.45
+    "newCustomers": 123,
+    "returningCustomers": 342,
+    "percentageNew": 0.2645
   },
   "team-members-table-list": [
     {

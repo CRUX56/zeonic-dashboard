@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit, OnDestroy, inject } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
@@ -19,19 +20,22 @@ export class TotalSales implements OnInit, OnDestroy {
 
   private widgetComponent: DashboardComponent = inject(DashboardComponent);
   private _snackBar: MatSnackBar = inject(MatSnackBar);
+  private subscription: Subscription = new Subscription();
 
   ngOnInit(): void {
     this.initalComponentData();
   }
 
-  ngOnDestroy(): void {}
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 
   initalComponentData() {
     this._fetchTotalSalesData();
   }
 
   private _fetchTotalSalesData(): void {
-    this.widgetComponent.getDashboardData().subscribe({
+    this.subscription = this.widgetComponent.getDashboardData().subscribe({
       next: (response: TotalSalesResponse) => {
         if (response) {
           const totalSalesData = response['total-sales'];
