@@ -1,1 +1,18 @@
-<p>header-bar works!</p>
+<div class="header-bar">
+  <mat-toolbar>
+    <button matIconButton class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <input
+      id="header-search"
+      type="text"
+      placeholder="Search"
+      [formControl]="headerBarSearchForm"
+    />
+    <span>Zeonic Dashboard</span>
+    <span class="example-spacer"></span>
+    <button matIconButton class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
+</div>

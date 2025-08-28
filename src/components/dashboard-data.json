@@ -1,0 +1,98 @@
+{
+  "total-orders": {
+    "value": 3876,
+    "percentageNew": 12.5,
+    "trend": "up"
+  },
+  "total-sales": {
+    "value": 8765,
+    "currency": "USD"
+  },
+  "total-customers": {
+    "value": 465,
+    "new-customers": 123,
+    "returning-customers": 342,
+    "percentage-new": 26.45
+  },
+  "team-members-table-list": [
+    {
+      "name": "John Doe",
+      "position": "Software Engineer",
+      "office": "New York",
+      "age": 30,
+      "start-date": "2015-03-25",
+      "salary": 60000
+    },
+    {
+      "name": "Jane Smith",
+      "position": "Project Manager",
+      "office": "London",
+      "age": 40,
+      "start-date": "2012-07-14",
+      "salary": 75000
+    },
+    {
+      "name": "Sam Johnson",
+      "position": "UX Designer",
+      "office": "San Francisco",
+      "age": 28,
+      "start-date": "2018-11-30",
+      "salary": 68000
+    },
+    {
+      "name": "Lisa Wong",
+      "position": "Data Analyst",
+      "office": "Tokyo",
+      "age": 32,
+      "start-date": "2016-05-20",
+      "salary": 72000
+    },
+    {
+      "name": "Michael Brown",
+      "position": "DevOps Engineer",
+      "office": "Berlin",
+      "age": 35,
+      "start-date": "2014-09-10",
+      "salary": 80000
+    }
+  ],
+  "recent-orders-table-list": [
+    {
+      "order-id": "#12345",
+      "customer-name": "Alice Brown",
+      "product": "Laptop",
+      "date": "2023-10-01",
+      "status": "Shipped",
+      "amount": 1200
+    },
+    {
+      "order-id": "#12346",
+      "customer-name": "Bob Green",
+      "product": "Smartphone",
+      "date": "2023-10-02",
+      "status": "Processing",
+      "amount": 800
+    },
+    {
+      "order-id": "#12347",
+      "customer-name": "Charlie White",
+      "product": "Tablet",
+      "date": "2023-10-03",
+      "status": "Delivered",
+      "amount": 450
+    },
+    {
+      "order-id": "#12348",
+      "customer-name": "Diana Black",
+      "product": "Headphones",
+      "date": "2023-10-04",
+      "status": "Cancelled",
+      "amount": 150
+    }
+  ],
+  "data-impressions": {
+    "data-impressions": 15000,
+    "data-clicks": 3000,
+    "data-conversions": 500
+  }
+}
