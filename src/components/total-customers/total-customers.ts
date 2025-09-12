@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, OnInit, OnDestroy, Inject } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, OnDestroy, inject } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
@@ -20,8 +20,8 @@ export class TotalCustomers implements OnInit, OnDestroy {
   returningCustomers: number = 0;
   percentageNew: number = 0;
 
-  private widgetComponent: DashboardComponent = Inject(DashboardComponent);
-  private _snackBar: MatSnackBar = Inject(MatSnackBar);
+  private widgetComponent: DashboardComponent = inject(DashboardComponent);
+  private _snackBar: MatSnackBar = inject(MatSnackBar);
   private subscription: Subscription = new Subscription();
 
   ngOnInit(): void {
@@ -51,5 +51,9 @@ export class TotalCustomers implements OnInit, OnDestroy {
       },
       error: (err: any) => {},
     });
+  }
+
+  snackBar(message: string): void {
+    this._snackBar.open(message, 'Close', { duration: 3000 });
   }
 }
